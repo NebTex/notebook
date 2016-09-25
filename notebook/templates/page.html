@@ -10,7 +10,22 @@
     <link rel="stylesheet" href="{{static_url("components/jquery-ui/themes/smoothness/jquery-ui.min.css") }}" type="text/css" />
     <link rel="stylesheet" href="{{static_url("components/jquery-typeahead/dist/jquery.typeahead.min.css") }}" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <style>
+        .pure-menu a{
+            text-decoration: none!important;
+            font-size: 16px;
+            font-family: sans-serif;
+            padding-bottom: 0px;
+            padding-top: 0px;
+        }
+         .pure-menu li{
+            width:138px;
+        }
+         .pure-menu a:hover{
+            text-decoration: none!important;
+        }
+    </style>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     {% block stylesheet %}
     <link rel="stylesheet" href="{{ static_url("style/style.min.css") }}" type="text/css"/>
     {% endblock %}
@@ -211,7 +226,18 @@
 <div id="header">
   <div id="header-container" class="container">
   <div id="ipython_notebook" class="nav navbar-brand pull-left"><a href="{{default_url}}" title='dashboard'>{% block logo %}<img src='{{static_url("base/images/logo.png") }}' alt='Jupyter Notebook'/>{% endblock %}</a></div>
-
+   <div class="pure-menu pure-menu-horizontal">
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                <a href="#" id="menuLink1" class="pure-menu-link" style="font-weight: bold;"><img width="24" src="https://secure.gravatar.com/avatar/e91673f08e7e10c8d0e9331baecd5334.jpg" /> NebTex</a>
+                <ul class="pure-menu-children">
+                    <li class="pure-menu-item"><a href="/nebtex/butterfly" class="pure-menu-link"><img width="24" src='{{static_url("base/images/butterfly.png") }}'/> Butterfly</a></li>
+                    <li class="pure-menu-item"><a href="/nebtex/consul" class="pure-menu-link"><img width="24" src='{{static_url("base/images/consul.png") }}'/> Consul</a></li>
+                </ul>
+            </li>
+        </ul>
+   </div>
+      
   {% block header_buttons %}
 
   {% block login_widget %}
